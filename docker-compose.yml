@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  web:
+    container_name: flask-app
+    
+    build: .
+    
+    ports:
+      - "5000:5000"
+    
+    environment:
+      - APP_VERSION=2.0.0-test
+      - HOSTNAME=docker-container
+    
+    restart: unless-stopped
+    
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
