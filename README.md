@@ -26,7 +26,7 @@ graph TB
 
 ---
 
-## Стек технологий
+## Tech Stack
 
 | Category | Tools |
 |----------|-------|
