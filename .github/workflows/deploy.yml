@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - '*.md'
 
 env:
   IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/flask-app
