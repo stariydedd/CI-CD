@@ -1,15 +1,38 @@
-# Web App
+# Auto-Deploy Flask App with CI/CD
 
-Простое веб-приложение на Python (Flask) для демонстрации навыков CI/CD и контейнеризации.
+## About the Project
 
-## Функционал
-- Главная страница
-- Эндпоинт версии (`/version`)
-- Эндпоинт здоровья (`/health`)
+Pet project to demonstrate **DevOps Engineer** skills. Full CI/CD cycle implemented:
+- Automatic Docker image build
+- Publication to Docker Hub
+- Deployment to VPS via SSH
 
-## Локальный запуск
-1. Создайте виртуальное окружение: `python -m venv venv`
-2. Активируйте: `source venv/bin/activate` (Linux/Mac) или `venv\Scripts\activate` (Windows)
-3. Установите зависимости: `pip install -r requirements.txt`
-4. Запустите: `python app.py`
-5. Откройте: `http://127.0.0.1:5000`
+---
+
+## Architecture
+
+```mermaid
+graph TB
+    A[Developer] -->|git push| B(GitHub Repository)
+    B --> C{GitHub Actions}
+    C -->|Build| D[Docker Image]
+    D -->|Push| E[(Docker Hub)]
+    E -->|Pull| F[VPS Server]
+    F -->|Deploy| G[Docker Compose]
+    G --> H[Nginx :80]
+    G --> I[Flask App :5000]
+    H -->|Proxy| I
+```
+
+---
+
+## Стек технологий
+
+| Category | Tools |
+|----------|-------|
+| **Language** | Python 3.11, Flask |
+| **Containerization** | Docker, Docker Compose |
+| **CI/CD** | GitHub Actions |
+| **Web Server** | Nginx (reverse proxy) |
+| **Infrastructure** | Ubuntu 22.04, VPS |
+| **Image Registry** | Docker Hub |
