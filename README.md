@@ -7,8 +7,6 @@ Pet project to demonstrate **DevOps Engineer** skills. Full CI/CD cycle implemen
 - Publication to Docker Hub
 - Deployment to VPS via SSH
 
----
-
 ## Architecture
 
 ```mermaid
@@ -23,8 +21,6 @@ graph TB
     G --> I[Flask App :5000]
     H -->|Proxy| I
 ```
-
----
 
 ## Tech Stack
 
