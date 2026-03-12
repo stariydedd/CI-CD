@@ -33,7 +33,7 @@ jobs:
             ${{ env.IMAGE_NAME }}:${{ github.sha }}
       
       - name: Show image info
-        run: echo "Image pushed: ${{ env.IMAGE_NAME }}:${{ github.sha }}"
+        run: echo "Image pushed ${{ env.IMAGE_NAME }}:${{ github.sha }}"
 
   deploy:
     runs-on: ubuntu-latest
